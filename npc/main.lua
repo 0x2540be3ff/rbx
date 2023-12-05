@@ -1,5 +1,23 @@
---/you'll need to modify acs in order for it to work/--
+local w = game.Workspace
+local w_table = {
+	
+}
+--[[
+TODO:
+fix the shitty followPath() function
+add customizable tables for easier editing
+add wander() function -> test it
+add waypoints table
+add a stop function so the npc stops moving when in wander mode (incase the shoot function gets called)
+optimize code maybe??
 
+also if you want it to work you'll need to add this in your acs in the Shoot() function:
+
+RS.updateSoundReactor:FireServer(char:FindFirstChild("HumanoidRootPart").Position)
+
+add it one line before this in every if statement:
+Evt.Atirar:FireServer(WeaponTool,Suppressor,FlashHider)
+]]
 local PathfindingService = game:GetService("PathfindingService")
 local RunService = game:GetService("RunService")
 
@@ -12,7 +30,7 @@ local part = game.Workspace.Part
 local part2 = game.Workspace.Part2
 local TEST_DESTINATION
 local updateSound = game.Workspace.updateSound
-local waypoints
+local waypoints -- = {}
 local nextWaypointIndex
 local reachedConnection
 local blockedConnection
@@ -44,6 +62,7 @@ function setRandomPath()
 	end
 end
 setRandomPath()
+
 local function followPath(destination)
 	local success, errorMessage = pcall(function()
 		path:ComputeAsync(character.PrimaryPart.Position, destination)
@@ -80,6 +99,12 @@ function getMagnitude(x)
 	local magn = (character.HumanoidRootPart.Position-x).Magnitude
 	return magn
 end
+--[[
+function wander()
+	followPath(w_table[math.random(#w_table)])
+	wait(math.random(10,30))
+end
+]]
 function onTouched(hit)
 	--print(hit.Parent)
 	if not hit or not hit.Parent then return end
