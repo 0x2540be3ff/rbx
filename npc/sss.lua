@@ -1,4 +1,5 @@
---[[ServerScriptService
+--[[
+ServerScriptService
 also make sure there is a RemoteEvent called "updateSoundReactor" in the ReplicatedStorage
 ]]
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
