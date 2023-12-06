@@ -11,13 +11,14 @@ add waypoints table
 add a stop function so the npc stops moving when in wander mode (incase the shoot function gets called)
 optimize code maybe??
 
-also if you want it to work you'll need to add this in your acs in the Shoot() function:
-
+also if you want it to work you'll need to add this in your acs in the Shoot() function and add a different script in ServerScriptStorage:
+ACS_Framework in ACS_Client
 RS.updateSoundReactor:FireServer(char:FindFirstChild("HumanoidRootPart").Position)
 
 add it one line before this in every if statement:
 Evt.Atirar:FireServer(WeaponTool,Suppressor,FlashHider)
 ]]
+
 local PathfindingService = game:GetService("PathfindingService")
 local RunService = game:GetService("RunService")
 
