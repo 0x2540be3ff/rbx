@@ -1,2 +1,1 @@
-# rbx
-My roblox script collection
+# roblox script collection
