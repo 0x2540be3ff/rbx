@@ -1,5 +1,5 @@
 --/Simple LUA gui animation/--
-
+-- TODO: fix the shitty code
 local instruct = {
 	"Press LSHIFT to run.",
 	"Press 2 to equip your pistol.",
