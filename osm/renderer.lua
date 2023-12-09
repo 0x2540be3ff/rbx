@@ -40,6 +40,24 @@ local minLat = lat - (loadRange/2)
 local minLon = lon - (loadRange/2)
 local maxLat = lat + (loadRange/2)
 local maxLon = lon + (loadRange/2)
+
+function addInstances()
+	print("Adding instances...")
+	local load_s = Instance.new("RemoteEvent")
+	load_s.Name = "LoadingStatus"
+	load_s.Parent = rs
+	load_s.Archivable = true
+	local node_t = Instance.new("Model")
+	node_t.Name = "Nodes"
+	node_t.Parent = game.Workspace
+	node_t.Archivable = true
+end
+if manualAdd == false then
+	addInstances()
+else
+	warn("manualAdd is enabled!")
+end
+
 print("Rendering started!")
 game.ReplicatedStorage.LoadingStatus:FireAllClients(true, "Requesting map nodes...", 0)
 local query = opapi.query("node("..minLat..","..minLon..","..maxLat..","..maxLon.."); out;")
