@@ -10,7 +10,7 @@ local loadRange = .01
 local lat = nil
 local lon = nil
 
--- I recommend you don't touch this below!
+-- I recommend you to not touch this below!
 local ratio = {
 	3, -- y
 	1.5 -- x
