@@ -1,7 +1,7 @@
 --/ROBLOX OSM Renderer | Renderer.lua/--
 --[[
 To get started:
-Open instructions.lua
+Open readme.lua
 
 ]]
 -----------------------------------------------------------------------
