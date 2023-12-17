@@ -9,16 +9,17 @@ NPC modes: Wander, Hide and Escape (Run)
 Shooting reaction
 
 Next update:
+Create a moduleScript so I don't have to configure every npc manually
 Automatically add needed parts and scripts (manualAdd)
 Sound distance
-Visual reaction (maybe)
+Visual reaction, will use raycasting
 Optimized followPath() function
 ]]
 local w = game.Workspace
 
 
 -------------------------------------------------------------------
-
+--TODO: Add these vars to a moduleScript
 
 --local manualAdd = true
 local AIDifficulty = 10 -- from 1 to 20
