@@ -1,8 +1,9 @@
 --[[
-v0.7 BETA
+v0.7.1 BETA
 Made by xanHR
 
 Added:
+Minor value change
 Sound distance
 Optimized code a little (52 lines less)
 Separate ModuleScript for configuration
@@ -29,7 +30,7 @@ local updatePos = ReplicatedStorage:FindFirstChild("updatePos")
 local path = PathfindingService:CreatePath()
 local character = script.Parent
 local humanoid = character:WaitForChild("Humanoid")
-local goto
+local go_to
 local waypoints -- = {}
 local nextWaypointIndex
 local reachedConnection
@@ -53,14 +54,14 @@ function setRandomPath()
 	if c.AIDifficulty >= seed then
 		if hide == 0 then
 			if escape == 0 then
-				goto = c.esc_table[math.random(#c.esc_table)]
+				go_to = c.esc_table[math.random(#c.esc_table)]
 				escape = 1
 			end
 		end
 	else
 		if escape == 0 then
 			if hide == 0 then
-				goto = c.h_table[math.random(#c.h_table)]
+				go_to = c.h_table[math.random(#c.h_table)]
 				hide = 1
 			end
 		end
@@ -137,7 +138,7 @@ function a(plr, pos)
 			setRandomPath()
 			reach = 0
 			humanoid.WalkSpeed = c.AISpeed
-			followPath(goto)
+			followPath(go_to)
 		end
 	end
 end
