@@ -10,7 +10,7 @@ config.fakeDeath = true
 config.visualReaction = true
 config.soundReaction = true
 config.AIWaitTime = {5, 10} --how long the NPC waits until it moves to another part (min, max)
-config.VisualReactionDistance = 715 -- 200m irl
+config.VisualReactionDistance = 256
 config.VisualReactionTime = 0.2
 
 config.w_table = { -- wander_parts
