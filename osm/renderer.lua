@@ -31,7 +31,7 @@ local manualAdd = false
 -----------------------------------------------------------------------
 local httpService = game:GetService("HttpService")
 local sss = game:GetService("ServerScriptService")
-
+local rs = game:GetService("ReplicatedStorage")
 local opapi = require(sss.Modules.OverpassAPI)
 local partDisplay = require(sss.Modules.PartDisplaySystem)
 local stylesheet = require(sss.Modules.Stylesheet)
